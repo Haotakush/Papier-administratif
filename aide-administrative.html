@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aide Administrative — Votre guide pratique pour le droit au séjour en France</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0F1117;--bg2:#181B25;--bg3:#1E2230;--bg4:#232738;
+  --accent:#38BDF8;--accent-s:rgba(56,189,248,.12);--accent-g:rgba(56,189,248,.25);
+  --ok:#34D399;--ok-s:rgba(52,211,153,.12);
+  --warn:#FBBF24;--warn-s:rgba(251,191,36,.12);
+  --err:#FB7185;--err-s:rgba(251,113,133,.12);
+  --info:#818CF8;--info-s:rgba(129,140,248,.12);
+  --t1:#E8ECF4;--t2:#8B92A8;--t3:#565E75;
+  --brd:rgba(255,255,255,.06);--r:14px;--rs:8px;
+  --fd:'Fraunces',Georgia,serif;--fb:'DM Sans',-apple-system,sans-serif;
+  --tr:.25s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--t1);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:999}
+
+.hdr{position:sticky;top:0;z-index:100;background:rgba(15,17,23,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);padding:0 20px}
+.hdr-in{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--fd);font-size:1.25rem;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo-i{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--info));display:flex;align-items:center;justify-content:center;font-size:14px}
+.nav{display:flex;gap:3px;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}
+.nav-b{background:0;border:0;color:var(--t2);font-family:var(--fb);font-size:.82rem;font-weight:500;padding:7px 13px;border-radius:8px;cursor:pointer;transition:var(--tr);white-space:nowrap}
+.nav-b:hover,.nav-b.on{color:var(--t1);background:var(--accent-s)}.nav-b.on{color:var(--accent)}
+
+.main{max-width:940px;margin:0 auto;padding:28px 20px 80px}
+.hero{text-align:center;padding:40px 0 32px;animation:fu .6s ease}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-s);color:var(--accent);font-size:.75rem;font-weight:600;padding:5px 13px;border-radius:18px;margin-bottom:16px;letter-spacing:.02em}
+.hero h1{font-family:var(--fd);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:700;line-height:1.15;margin-bottom:14px;background:linear-gradient(135deg,var(--t1) 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--t2);font-size:1rem;max-width:520px;margin:0 auto}
+
+.sec{display:none}.sec.on{display:block;animation:fu .4s ease}
+.sec-t{font-family:var(--fd);font-size:1.4rem;font-weight:700;margin-bottom:6px}
+.sec-s{color:var(--t2);font-size:.88rem;margin-bottom:24px}
+
+/* Question Card */
+.qc{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:28px;animation:fu .4s ease}
+.qp{display:flex;gap:5px;margin-bottom:24px}
+.qd{height:4px;flex:1;border-radius:2px;background:var(--bg4);transition:var(--tr)}
+.qd.done{background:var(--accent)}.qd.cur{background:var(--accent);opacity:.5}
+.ql{font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.qt{font-family:var(--fd);font-size:1.2rem;font-weight:600;margin-bottom:20px;line-height:1.3}
+.qh{font-size:.82rem;color:var(--t2);margin-bottom:16px;padding:10px 14px;background:var(--bg4);border-radius:var(--rs);border-left:3px solid var(--accent)}
+.og{display:grid;gap:8px}
+.ob{display:flex;align-items:center;gap:12px;background:var(--bg4);border:1px solid var(--brd);border-radius:11px;padding:14px 16px;cursor:pointer;transition:var(--tr);text-align:left;color:var(--t1);font-family:var(--fb);font-size:.9rem}
+.ob:hover{background:var(--accent-s);border-color:var(--accent);transform:translateX(3px)}
+.ob .ic{width:36px;height:36px;border-radius:9px;background:var(--accent-s);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ob .lb{font-weight:500}.ob .ds{font-size:.78rem;color:var(--t2);margin-top:2px}
+.ob-back{display:inline-flex;align-items:center;gap:6px;color:var(--t2);font-size:.82rem;cursor:pointer;background:0;border:0;font-family:var(--fb);margin-bottom:16px;transition:var(--tr)}
+.ob-back:hover{color:var(--t1)}
+
+/* Result */
+.rc{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);overflow:hidden;animation:fu .5s ease}
+.rh{padding:24px 24px 18px;border-bottom:1px solid var(--brd)}
+.rh h2{font-family:var(--fd);font-size:1.2rem;font-weight:700;margin-bottom:3px}
+.rh p{color:var(--t2);font-size:.85rem}
+.rb{padding:22px 24px}
+.rt{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--accent-s);border-radius:11px;margin-bottom:18px}
+.rt .bg{background:var(--accent);color:var(--bg);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:5px;white-space:nowrap}
+.rt .tn{font-weight:600;font-size:.95rem}.rt .td{font-size:.8rem;color:var(--t2);margin-top:2px}
+
+/* Steps */
+.sl{list-style:none;position:relative}
+.sl::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--brd)}
+.si{display:flex;gap:14px;padding:12px 0;position:relative}
+.sn{width:30px;height:30px;border-radius:50%;background:var(--bg4);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--accent);flex-shrink:0;z-index:1}
+.sc h4{font-weight:600;font-size:.88rem;margin-bottom:3px}.sc p{font-size:.8rem;color:var(--t2);line-height:1.5}
+
+/* Checklist */
+.cp{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--bg4);border-radius:11px;margin-bottom:18px;flex-wrap:wrap}
+.ct{display:inline-flex;align-items:center;gap:5px;background:var(--accent-s);color:var(--accent);font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:5px}
+.pb{margin-bottom:20px}.ps{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.ps .c{font-weight:600;font-size:.88rem}.ps .p{font-size:.8rem;color:var(--t2)}
+.pt{height:7px;background:var(--bg4);border-radius:4px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,var(--accent),var(--ok));border-radius:4px;transition:width .5s ease}
+
+.dc{margin-bottom:20px}
+.dct{font-weight:600;font-size:.82rem;color:var(--t2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.di{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:9px;margin-bottom:4px;transition:var(--tr);cursor:pointer}
+.di:hover{background:var(--bg4)}
+.dk{width:20px;height:20px;border-radius:5px;border:2px solid var(--t3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:var(--tr)}
+.dk.ck{background:var(--ok);border-color:var(--ok)}.dk.ck::after{content:'✓';color:var(--bg);font-size:12px;font-weight:700}
+.di.cr .dn{text-decoration:line-through;color:var(--t3)}
+.dn{font-weight:500;font-size:.88rem}.dd{font-size:.78rem;color:var(--t2);margin-top:1px}
+.dl{font-size:.72rem;color:var(--info);background:var(--info-s);padding:2px 8px;border-radius:4px;margin-top:3px;display:inline-block}
+
+/* Timeline */
+.ti{display:flex;gap:18px;padding-bottom:24px;position:relative}
+.ti:not(:last-child)::after{content:'';position:absolute;left:18px;top:42px;bottom:0;width:2px;background:var(--brd)}
+.tic{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;z-index:1}
+.tic.p{background:var(--bg4)}.tic.a{background:var(--accent-s)}.tic.d{background:var(--ok-s)}.tic.w{background:var(--warn-s)}
+.tco{flex:1;padding-top:3px}
+.tco h4{font-weight:600;font-size:.9rem;margin-bottom:3px}
+.tco p{font-size:.8rem;color:var(--t2);line-height:1.5}
+.tm{display:flex;gap:8px;margin-top:7px;flex-wrap:wrap}
+.tt{font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:4px}
+.tt.dur{background:var(--bg4);color:var(--t2)}.tt.cost{background:var(--warn-s);color:var(--warn)}
+.tt.tip{background:var(--accent-s);color:var(--accent)}.tt.alert{background:var(--err-s);color:var(--err)}
+.tt.new{background:var(--info-s);color:var(--info)}
+
+/* Info banner */
+.ib{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--warn-s);border-radius:var(--r);margin-top:22px;font-size:.82rem;border:1px solid rgba(251,191,36,.12)}
+.ib .ii{font-size:18px;flex-shrink:0}.ib p{color:var(--t2);line-height:1.5}
+.ib a{color:var(--accent);text-decoration:underline}
+
+/* Context info blocks */
+.ctx{background:var(--bg4);border-radius:var(--rs);padding:14px 16px;margin-bottom:14px;border-left:3px solid var(--info)}
+.ctx-t{font-size:.78rem;font-weight:600;color:var(--info);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em}
+.ctx p{font-size:.82rem;color:var(--t2);line-height:1.5}
+.ctx a{color:var(--accent)}
+
+/* Buttons */
+.bp{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:var(--bg);border:0;border-radius:9px;padding:11px 20px;font-family:var(--fb);font-size:.88rem;font-weight:600;cursor:pointer;transition:var(--tr)}
+.bp:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.bs{display:inline-flex;align-items:center;gap:7px;background:var(--bg4);color:var(--t1);border:1px solid var(--brd);border-radius:9px;padding:11px 20px;font-family:var(--fb);font-size:.88rem;font-weight:500;cursor:pointer;transition:var(--tr)}
+.bs:hover{background:var(--bg3);border-color:rgba(255,255,255,.1)}
+.br{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.rl{color:var(--t3);font-size:.8rem;cursor:pointer;text-decoration:underline;background:0;border:0;font-family:var(--fb);margin-top:14px;display:inline-block}
+.rl:hover{color:var(--t2)}
+
+/* Tabs within sections */
+.tabs{display:flex;gap:3px;margin-bottom:20px;flex-wrap:wrap}
+.tab{background:var(--bg4);border:1px solid var(--brd);color:var(--t2);font-family:var(--fb);font-size:.78rem;font-weight:500;padding:6px 14px;border-radius:7px;cursor:pointer;transition:var(--tr)}
+.tab:hover{color:var(--t1)}.tab.on{color:var(--accent);background:var(--accent-s);border-color:transparent}
+
+/* Search */
+.search-box{position:relative;margin-bottom:20px}
+.search-box input{width:100%;background:var(--bg4);border:1px solid var(--brd);border-radius:10px;padding:12px 16px 12px 40px;color:var(--t1);font-family:var(--fb);font-size:.88rem}
+.search-box input::placeholder{color:var(--t3)}
+.search-box input:focus{outline:0;border-color:var(--accent)}
+.search-box .si-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--t3)}
+
+/* FAQ */
+.faq-item{background:var(--bg2);border:1px solid var(--brd);border-radius:11px;margin-bottom:8px;overflow:hidden;transition:var(--tr)}
+.faq-q{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:.9rem}
+.faq-q:hover{background:var(--bg3)}
+.faq-a{padding:0 16px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.85rem;color:var(--t2);line-height:1.6}
+.faq-item.open .faq-a{max-height:600px;padding:0 16px 16px}
+.faq-arrow{transition:transform .3s ease;color:var(--t3)}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){.qc{padding:22px 18px}.rb{padding:18px}.rh{padding:18px}.hero{padding:28px 0 24px}.ob .ic{width:32px;height:32px}}
+.lang-sw{display:flex;align-items:center;gap:4px;margin-left:8px;border-left:1px solid var(--brd);padding-left:10px}
+.lang-b{background:0;border:1px solid transparent;color:var(--t3);font-family:var(--fb);font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer;transition:var(--tr);display:flex;align-items:center;gap:4px}
+.lang-b:hover{color:var(--t1);background:var(--bg4)}
+.lang-b.on{color:var(--accent);background:var(--accent-s);border-color:rgba(56,189,248,.2)}
+</style>
+</head>
+<body>
+
+<header class="hdr"><div class="hdr-in">
+  <div class="logo"><div class="logo-i">📋</div>Aide Administrative</div>
+  <div style="display:flex;align-items:center">
+  <nav class="nav" id="main-nav">
+    <button class="nav-b on" onclick="go('diag',this)" data-nav="diag">Diagnostic</button>
+    <button class="nav-b" onclick="go('docs',this)" data-nav="docs">Documents</button>
+    <button class="nav-b" onclick="go('suivi',this)" data-nav="suivi">Suivi</button>
+    <button class="nav-b" onclick="go('faq',this)" data-nav="faq">FAQ</button>
+    <button class="nav-b" onclick="go('sos',this)" data-nav="sos">🚨 SOS</button>
+    <button class="nav-b" onclick="go('assos',this)" data-nav="assos">Associations</button>
+    <button class="nav-b" onclick="go('liens',this)" data-nav="liens">Liens utiles</button>
+  </nav>
+  <div class="lang-sw">
+    <button class="lang-b on" onclick="setLang('fr')">🇫🇷 FR</button>
+    <button class="lang-b" onclick="setLang('en')">🇬🇧 EN</button>
+  </div>
+  </div>
+</div></header>
+
+<main class="main">
+<div class="hero" id="hero">
+  <div class="badge">🇫🇷 Outil gratuit & open source</div>
+  <h1>Aide Administrative</h1>
+  <p>Votre guide pratique pour le droit au séjour en France.</p>
+</div>
+
+<div class="sec on" id="s-diag"><div id="dflow"></div></div>
+<div class="sec" id="s-docs">
+  <h2 class="sec-t">📁 Pièces justificatives</h2>
+  <p class="sec-s">Liste personnalisée basée sur votre diagnostic. Cochez au fur et à mesure — progression sauvegardée.</p>
+  <div id="docs-c"><p style="color:var(--t2)">→ Complétez d'abord le diagnostic pour obtenir votre checklist.</p></div>
+</div>
+<div class="sec" id="s-suivi">
+  <h2 class="sec-t">📅 Timeline de vos démarches</h2>
+  <p class="sec-s">Chaque étape avec ses délais, coûts et conseils pratiques.</p>
+  <div id="suivi-c"><p style="color:var(--t2)">→ Complétez d'abord le diagnostic pour obtenir votre timeline.</p></div>
+</div>
+<div class="sec" id="s-faq">
+  <h2 class="sec-t">❓ Questions fréquentes</h2>
+  <p class="sec-s">Réponses aux interrogations les plus courantes sur les démarches.</p>
+  <div class="search-box"><span class="si-icon">🔍</span><input type="text" placeholder="Rechercher une question..." oninput="filterFaq(this.value)"></div>
+  <div id="faq-c"></div>
+</div>
+<div class="sec" id="s-liens">
+  <h2 class="sec-t">🔗 Liens & ressources officiels</h2>
+  <p class="sec-s">Accès direct aux sites et plateformes essentielles.</p>
+  <div id="liens-c"></div>
+</div>
+<div class="sec" id="s-sos">
+  <h2 class="sec-t">🚨 Situations critiques</h2>
+  <p class="sec-s">Vous êtes dans une situation urgente ou complexe ? Trouvez les réponses et les actions concrètes ici.</p>
+  <div id="sos-c"></div>
+</div>
+<div class="sec" id="s-assos">
+  <h2 class="sec-t">🤝 Associations & aide gratuite</h2>
+  <p class="sec-s">Structures qui peuvent vous accompagner gratuitement dans vos démarches.</p>
+  <div class="search-box"><span class="si-icon">🔍</span><input type="text" placeholder="Rechercher une association ou un type d'aide..." oninput="filterAssos(this.value)"></div>
+  <div id="assos-c"></div>
+</div>
+</main>
+
+<script>
+// ============================================
+// i18n — TRANSLATION SYSTEM
+// ============================================
+let LANG = localStorage.getItem('aa_lang') || 'fr';
+
+const i18n = {
+  // NAV
+  nav_diag: { fr: 'Diagnostic', en: 'Assessment' },
+  nav_docs: { fr: 'Documents', en: 'Documents' },
+  nav_suivi: { fr: 'Suivi', en: 'Timeline' },
+  nav_faq: { fr: 'FAQ', en: 'FAQ' },
+  nav_sos: { fr: '🚨 SOS', en: '🚨 SOS' },
+  nav_assos: { fr: 'Associations', en: 'Support orgs' },
+  nav_liens: { fr: 'Liens utiles', en: 'Useful links' },
+  // HERO
+  hero_badge: { fr: '🇫🇷 Outil gratuit & open source', en: '🇫🇷 Free & open source tool' },
+  hero_title: { fr: 'Aide Administrative', en: 'Aide Administrative' },
+  hero_sub: { fr: 'Votre guide pratique pour le droit au séjour en France.', en: 'Your practical guide to residence permits in France.' },
+  // SECTIONS
+  sec_docs_t: { fr: '📁 Pièces justificatives', en: '📁 Required documents' },
+  sec_docs_s: { fr: 'Liste personnalisée basée sur votre diagnostic. Cochez au fur et à mesure — progression sauvegardée.', en: 'Personalized list based on your assessment. Check items off as you go — progress is saved.' },
+  sec_docs_empty: { fr: '→ Complétez d\'abord le diagnostic pour obtenir votre checklist.', en: '→ Complete the assessment first to get your checklist.' },
+  sec_suivi_t: { fr: '📅 Timeline de vos démarches', en: '📅 Your process timeline' },
+  sec_suivi_s: { fr: 'Chaque étape avec ses délais, coûts et conseils pratiques.', en: 'Each step with estimated timelines, costs, and practical advice.' },
+  sec_suivi_empty: { fr: '→ Complétez d\'abord le diagnostic pour obtenir votre timeline.', en: '→ Complete the assessment first to get your timeline.' },
+  sec_faq_t: { fr: '❓ Questions fréquentes', en: '❓ Frequently asked questions' },
+  sec_faq_s: { fr: 'Réponses aux interrogations les plus courantes sur les démarches.', en: 'Answers to the most common questions about the process.' },
+  sec_faq_search: { fr: 'Rechercher une question...', en: 'Search a question...' },
+  sec_liens_t: { fr: '🔗 Liens & ressources officiels', en: '🔗 Official links & resources' },
+  sec_liens_s: { fr: 'Accès direct aux sites et plateformes essentielles.', en: 'Direct access to essential websites and platforms.' },
+  sec_sos_t: { fr: '🚨 Situations critiques', en: '🚨 Critical situations' },
+  sec_sos_s: { fr: 'Vous êtes dans une situation urgente ou complexe ? Trouvez les réponses et les actions concrètes ici.', en: 'Are you in an urgent or complex situation? Find answers and concrete actions here.' },
+  sec_assos_t: { fr: '🤝 Associations & aide gratuite', en: '🤝 Support organizations & free help' },
+  sec_assos_s: { fr: 'Structures qui peuvent vous accompagner gratuitement dans vos démarches.', en: 'Organizations that can help you with your procedures for free.' },
+  sec_assos_search: { fr: 'Rechercher une association ou un type d\'aide...', en: 'Search an organization or type of help...' },
+  // COMMON UI
+  back: { fr: '← Retour', en: '← Back' },
+  restart: { fr: '↻ Recommencer le diagnostic', en: '↻ Restart assessment' },
+  btn_checklist: { fr: '📁 Ma checklist complète', en: '📁 My full checklist' },
+  btn_timeline: { fr: '📅 Timeline détaillée', en: '📅 Detailed timeline' },
+  recommended: { fr: 'TITRE RECOMMANDÉ', en: 'RECOMMENDED PERMIT' },
+  result_h: { fr: '✅ Votre parcours personnalisé', en: '✅ Your personalized pathway' },
+  result_sub: { fr: 'Basé sur vos réponses.', en: 'Based on your answers.' },
+  first_steps: { fr: 'Premières étapes', en: 'First steps' },
+  more_steps: { fr: 'étapes supplémentaires → voir l\'onglet Suivi', en: 'more steps → see the Timeline tab' },
+  duration: { fr: 'Durée', en: 'Duration' },
+  cost: { fr: 'Coût', en: 'Cost' },
+  warning_title: { fr: 'Avertissement', en: 'Disclaimer' },
+  warning_text: { fr: 'Outil informatif, ne remplace pas un conseil juridique. Les pièces et délais varient selon les préfectures.', en: 'Informational tool, does not replace legal advice. Documents and timelines vary by prefecture.' },
+  tarif_change: { fr: '💰 Changement de tarifs 2026', en: '💰 2026 fee changes' },
+  profile: { fr: 'Profil :', en: 'Profile:' },
+  documents_count: { fr: 'documents', en: 'documents' },
+  tip_official: { fr: 'Consultez toujours service-public.gouv.fr ou le site de votre préfecture pour la liste définitive.', en: 'Always check service-public.gouv.fr or your prefecture\'s website for the final list.' },
+  tip_delays: { fr: 'Délais estimés. Conservez toujours une copie de votre récépissé. En cas de dépassement du délai légal de 4 mois sans réponse, c\'est un refus implicite — vous pouvez faire un recours.', en: 'Estimated timelines. Always keep a copy of your receipt. If there\'s no response after the legal 4-month deadline, it\'s an implicit refusal — you can file an appeal.' },
+  sos_reminder_t: { fr: 'Rappel important', en: 'Important reminder' },
+  sos_reminder: { fr: 'Ces informations sont générales. Chaque situation est unique. En cas de doute, contactez une association spécialisée ou un avocat en droit des étrangers. L\'aide juridictionnelle peut financer un avocat gratuitement.', en: 'This information is general. Each situation is unique. If in doubt, contact a specialized organization or an immigration lawyer. Legal aid can fund a lawyer for free.' },
+  your_situation: { fr: 'Votre situation', en: 'Your situation' },
+  your_rights: { fr: '📋 Vos droits :', en: '📋 Your rights:' },
+  actions_to_take: { fr: '✅ Actions à mener :', en: '✅ Actions to take:' },
+  civique_warn: { fr: '⚠️ Examen civique + niveau A2 obligatoires (2026)', en: '⚠️ Civic exam + A2 level required (2026)' },
+  official_link: { fr: '🔗 Lien officiel', en: '🔗 Official link' },
+};
+
+function T(key) { return (i18n[key] && i18n[key][LANG]) || (i18n[key] && i18n[key]['fr']) || key; }
+
+function setLang(lang) {
+  LANG = lang;
+  localStorage.setItem('aa_lang', lang);
+  document.querySelectorAll('.lang-b').forEach(b => b.classList.remove('on'));
+  document.querySelector(`.lang-b[onclick="setLang('${lang}')"]`).classList.add('on');
+  document.documentElement.lang = lang;
+  updateStaticUI();
+  renderQ();
+  renderFaq(faqs);
+  renderLiens();
+  renderSos();
+  renderAssos(assosData);
+  if (window._cats) renderCL(window._cats);
+}
+
+function updateStaticUI() {
+  // Nav buttons
+  const navMap = { diag:'nav_diag', docs:'nav_docs', suivi:'nav_suivi', faq:'nav_faq', sos:'nav_sos', assos:'nav_assos', liens:'nav_liens' };
+  document.querySelectorAll('[data-nav]').forEach(b => { b.textContent = T(navMap[b.dataset.nav]); });
+  // Hero
+  document.querySelector('.badge').textContent = T('hero_badge');
+  document.querySelector('.hero h1').textContent = T('hero_title');
+  document.querySelector('.hero p').textContent = T('hero_sub');
+  // Section headers
+  const secs = [
+    ['s-docs', 'sec_docs_t', 'sec_docs_s', 'sec_docs_empty'],
+    ['s-suivi', 'sec_suivi_t', 'sec_suivi_s', 'sec_suivi_empty'],
+    ['s-faq', 'sec_faq_t', 'sec_faq_s'],
+    ['s-liens', 'sec_liens_t', 'sec_liens_s'],
+    ['s-sos', 'sec_sos_t', 'sec_sos_s'],
+    ['s-assos', 'sec_assos_t', 'sec_assos_s'],
+  ];
+  secs.forEach(([id, tKey, sKey]) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const t = el.querySelector('.sec-t'); if (t) t.textContent = T(tKey);
+      const s = el.querySelector('.sec-s'); if (s) s.textContent = T(sKey);
+    }
+  });
+  // Search placeholders
+  const faqSearch = document.querySelector('#s-faq .search-box input');
+  if (faqSearch) faqSearch.placeholder = T('sec_faq_search');
+  const assosSearch = document.querySelector('#s-assos .search-box input');
+  if (assosSearch) assosSearch.placeholder = T('sec_assos_search');
+}
+
+// ============================================
+// NAVIGATION
+// ============================================
+function go(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.getElementById('s-'+id).classList.add('on');
+  document.querySelectorAll('.nav-b').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('hero').style.display=id==='diag'?'':'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ============================================
+// DATA: DIAGNOSTIC QUESTIONS (deep branching)
+// L(fr,en) returns the right language string
+// ============================================
+function L(fr,en){return LANG==='en'?(en||fr):fr;}
+
+const Q=[
+  {id:'motif',label:()=>L('Étape 1 — Motif du séjour','Step 1 — Reason for stay'),
+   text:()=>L('Quel est le motif principal de votre séjour en France ?','What is the main reason for your stay in France?'),
+   help:()=>L('Le motif détermine le type de titre de séjour et les pièces à fournir.','The reason determines the type of residence permit and required documents.'),
+   opts:[
+     {v:'travail',i:'💼',l:()=>L('Travail salarié','Employment'),d:()=>L('CDI, CDD, intérim, saisonnier','Permanent, fixed-term, temp, seasonal')},
+     {v:'etudes',i:'🎓',l:()=>L('Études','Studies'),d:()=>L('Université, grande école, formation','University, college, training')},
+     {v:'famille',i:'👨‍👩‍👧',l:()=>L('Vie privée & familiale','Private & family life'),d:()=>L('Conjoint, parent, regroupement familial','Spouse, parent, family reunification')},
+     {v:'talent',i:'⭐',l:()=>L('Talent (ex Passeport Talent)','Talent (formerly Passeport Talent)'),d:()=>L('Salarié qualifié, chercheur, entrepreneur, artiste','Skilled worker, researcher, entrepreneur, artist')},
+     {v:'autre',i:'📋',l:()=>L('Autre situation','Other situation'),d:()=>L('Visiteur, retraité, étranger malade, régularisation','Visitor, retiree, medical, regularization')}
+   ]},
+  {id:'travail_type',label:()=>L('Précision — Type de contrat','Details — Contract type'),
+   text:()=>L('Quel type de contrat de travail avez-vous ?','What type of employment contract do you have?'),
+   show:a=>a.motif==='travail',
+   opts:[
+     {v:'cdi',i:'📝',l:()=>L('CDI (contrat à durée indéterminée)','Permanent contract (CDI)'),d:()=>L('→ Carte "Salarié"','→ "Employee" permit')},
+     {v:'cdd',i:'📄',l:()=>L('CDD (contrat à durée déterminée)','Fixed-term contract (CDD)'),d:()=>L('→ Carte "Travailleur temporaire"','→ "Temporary worker" permit')},
+     {v:'saisonnier',i:'🌾',l:()=>L('Travail saisonnier','Seasonal work'),d:()=>L('→ Carte pluriannuelle "Saisonnier" (max 6 mois/an)','→ Multi-year "Seasonal" permit (max 6 months/year)')},
+     {v:'metier_tension',i:'🔧',l:()=>L('Métier en tension','Shortage occupation'),d:()=>L('Nouveau dispositif 2024 — régularisation possible sans contrat préalable','New 2024 scheme — regularization possible without prior contract')}
+   ]},
+  {id:'famille_type',label:()=>L('Précision — Lien familial','Details — Family tie'),
+   text:()=>L('Quel est votre lien familial en France ?','What is your family connection in France?'),
+   show:a=>a.motif==='famille',
+   opts:[
+     {v:'conjoint_fr',i:'💍',l:()=>L('Conjoint(e) de Français(e)','Spouse of a French citizen'),d:()=>L('Marié(e) avec un(e) citoyen(ne) français(e)','Married to a French citizen')},
+     {v:'parent_enfant_fr',i:'👶',l:()=>L('Parent d\'enfant français','Parent of a French child'),d:()=>L('Vous avez un enfant de nationalité française','You have a child with French nationality')},
+     {v:'regroupement',i:'👨‍👩‍👧‍👦',l:()=>L('Regroupement familial','Family reunification'),d:()=>L('Rejoindre un membre de famille déjà en France','Joining a family member already in France')},
+     {v:'pacs_concubin',i:'🤝',l:()=>L('PACS / Concubinage avec étranger','Civil union / Partner of a resident'),d:()=>L('Partenaire de vie d\'un résident étranger','Life partner of a foreign resident')},
+     {v:'liens_perso',i:'🏠',l:()=>L('Liens personnels & familiaux','Personal & family ties'),d:()=>L('10 ans de présence, insertion, attaches en France','10 years of presence, integration, ties to France')}
+   ]},
+  {id:'talent_type',label:()=>L('Précision — Catégorie Talent','Details — Talent category'),
+   text:()=>L('Quelle catégorie de Talent vous concerne ?','Which Talent category applies to you?'),
+   help:()=>L('Depuis 2025, le "Passeport Talent" est renommé "Talent" avec de nouvelles sous-catégories.','Since 2025, "Passeport Talent" is renamed "Talent" with new subcategories.'),
+   show:a=>a.motif==='talent',
+   opts:[
+     {v:'salarie_qualifie',i:'👔',l:()=>L('Salarié qualifié / Carte Bleue EU','Skilled employee / EU Blue Card'),d:()=>L('Diplôme ≥ Master ou 5 ans d\'exp. + salaire ≥ 39 582€/an','Degree ≥ Master or 5 yrs exp. + salary ≥ €39,582/yr')},
+     {v:'chercheur',i:'🔬',l:()=>L('Chercheur / Enseignant','Researcher / Academic'),d:()=>L('Convention d\'accueil avec un organisme de recherche','Hosting agreement with a research institution')},
+     {v:'entrepreneur',i:'🚀',l:()=>L('Créateur d\'entreprise / Investisseur','Business creator / Investor'),d:()=>L('Projet économique innovant + investissement min. 30 000€','Innovative project + min. €30,000 investment')},
+     {v:'artiste',i:'🎨',l:()=>L('Artiste / Renommée internationale','Artist / International renown'),d:()=>L('Activité artistique ou culturelle en France','Artistic or cultural activity in France')},
+     {v:'medical',i:'🏥',l:()=>L('Profession médicale & pharmacie','Medical & pharmacy profession'),d:()=>L('Nouvelle mention créée en 2025','New category created in 2025')}
+   ]},
+  {id:'etudes_type',label:()=>L('Précision — Niveau d\'études','Details — Study level'),
+   text:()=>L('Quel niveau d\'études visez-vous ?','What level of studies are you pursuing?'),
+   show:a=>a.motif==='etudes',
+   opts:[
+     {v:'licence',i:'📚',l:()=>L('Licence / Bachelor','Bachelor\'s degree'),d:()=>L('1ère à 3ème année','1st to 3rd year')},
+     {v:'master',i:'📖',l:()=>L('Master / Diplôme d\'ingénieur','Master\'s / Engineering degree'),d:()=>L('4ème et 5ème année','4th and 5th year')},
+     {v:'doctorat',i:'🎓',l:()=>L('Doctorat / Post-doc','PhD / Post-doc'),d:()=>L('→ Peut relever du titre "Talent-Chercheur"','→ May qualify for "Talent-Researcher" permit')},
+     {v:'formation',i:'📝',l:()=>L('Formation courte / Stage','Short course / Internship'),d:()=>L('Moins d\'1 an','Less than 1 year')}
+   ]},
+  {id:'situation',label:()=>L('Étape 2 — Votre situation actuelle','Step 2 — Your current situation'),
+   text:()=>L('Où en êtes-vous dans votre parcours ?','Where are you in the process?'),
+   opts:[
+     {v:'premiere',i:'🆕',l:()=>L('Première demande depuis l\'étranger','First application from abroad'),d:()=>L('Vous n\'êtes pas encore en France ou venez d\'arriver','You are not yet in France or have just arrived')},
+     {v:'renouvellement',i:'🔄',l:()=>L('Renouvellement','Renewal'),d:()=>L('Votre titre actuel arrive à expiration','Your current permit is expiring')},
+     {v:'changement',i:'🔀',l:()=>L('Changement de statut','Change of status'),d:()=>L('Vous avez un titre mais voulez en changer le motif','You have a permit but want to change its category')},
+     {v:'pluriannuelle',i:'📅',l:()=>L('Passage en carte pluriannuelle','Upgrade to multi-year permit'),d:()=>L('De la carte temporaire (1 an) vers une carte 2-4 ans','From temporary (1-year) to 2-4 year permit')}
+   ]},
+  {id:'nationalite',label:()=>L('Étape 3 — Nationalité','Step 3 — Nationality'),
+   text:()=>L('Votre nationalité est-elle soumise à des accords spécifiques ?','Is your nationality subject to specific agreements?'),
+   help:()=>L('Certaines nationalités ont des procédures particulières (Algérie, Maroc, Tunisie, accords bilatéraux).','Some nationalities have special procedures (Algeria, Morocco, Tunisia, bilateral agreements).'),
+   opts:[
+     {v:'algerie',i:'🇩🇿',l:()=>L('Algérie','Algeria'),d:()=>L('Accord franco-algérien 1968 — Certificat de résidence','Franco-Algerian agreement 1968 — Residence certificate')},
+     {v:'maghreb',i:'🌍',l:()=>L('Maroc / Tunisie','Morocco / Tunisia'),d:()=>L('Accords bilatéraux — carte de résident facilitée après 3 ans','Bilateral agreements — resident card facilitated after 3 years')},
+     {v:'afrique_accord',i:'🌍',l:()=>L('Afrique sub. (pays avec accord)','Sub-Saharan Africa (countries with agreements)'),d:()=>L('Bénin, Burkina, Cameroun, Congo, CI, Mali, Niger, Sénégal, Togo…','Benin, Burkina Faso, Cameroon, Congo, Ivory Coast, Mali, Niger, Senegal, Togo…')},
+     {v:'autre_nat',i:'🌐',l:()=>L('Autre nationalité (hors UE)','Other nationality (non-EU)'),d:()=>L('Procédure standard','Standard procedure')}
+   ]},
+  {id:'langue',label:()=>L('Étape 4 — Niveau de français','Step 4 — French language level'),
+   text:()=>L('Quel est votre niveau de français certifié ?','What is your certified French level?'),
+   help:()=>L('Depuis 2026 : A2 obligatoire pour la carte pluriannuelle, B1 pour la carte de résident, B2 pour la naturalisation. Examen civique (QCM 40 questions) également obligatoire.','Since 2026: A2 required for multi-year permit, B1 for resident card, B2 for naturalization. Civic exam (40-question MCQ) also required.'),
+   opts:[
+     {v:'a1',i:'🔤',l:()=>L('A1 — Débutant','A1 — Beginner'),d:()=>L('Suffisant pour le 1er titre temporaire uniquement','Sufficient for the 1st temporary permit only')},
+     {v:'a2',i:'📝',l:()=>L('A2 — Élémentaire','A2 — Elementary'),d:()=>L('Minimum requis pour la carte pluriannuelle (2026)','Minimum required for multi-year permit (2026)')},
+     {v:'b1',i:'💬',l:()=>L('B1 — Intermédiaire','B1 — Intermediate'),d:()=>L('Requis pour la carte de résident 10 ans','Required for the 10-year resident card')},
+     {v:'b2',i:'🗣️',l:()=>L('B2+ — Avancé','B2+ — Advanced'),d:()=>L('Requis pour la naturalisation','Required for naturalization')},
+     {v:'diplome_fr',i:'🎓',l:()=>L('Diplôme français (dispense)','French degree (exemption)'),d:()=>L('Bac ou diplôme supérieur français = dispense de test','French baccalaureate or higher = test exemption')}
+   ]},
+  {id:'prefecture',label:()=>L('Étape 5 — Lieu de dépôt','Step 5 — Filing location'),
+   text:()=>L('Où allez-vous déposer votre dossier ?','Where will you file your application?'),
+   help:()=>L('La majorité des demandes se font désormais en ligne sur ANEF. Le lieu impacte surtout les délais.','Most applications are now filed online via ANEF. Location mainly affects processing times.'),
+   opts:[
+     {v:'paris',i:'🏙️',l:()=>L('Paris / Île-de-France','Paris / Île-de-France'),d:()=>L('Délais les plus longs (4-8 mois)','Longest delays (4-8 months)')},
+     {v:'grande',i:'🌆',l:()=>L('Grande métropole','Major city'),d:()=>L('Lyon, Marseille, Toulouse, Bordeaux, Lille (3-6 mois)','Lyon, Marseille, Toulouse, Bordeaux, Lille (3-6 months)')},
+     {v:'moyenne',i:'🏘️',l:()=>L('Ville moyenne / préfecture standard','Medium city / standard prefecture'),d:()=>L('(2-4 mois)','(2-4 months)')},
+     {v:'petit',i:'🏡',l:()=>L('Petite préfecture','Small prefecture'),d:()=>L('Délais souvent plus courts (1-3 mois)','Often shorter delays (1-3 months)')}
+   ]}
+];
+
+// ============================================
+// STATE
+// ============================================
+let A={},cQ=0,ckd=JSON.parse(localStorage.getItem('pf2_ck')||'{}');
+
+function visibleQs(){return Q.filter(q=>!q.show||q.show(A))}
+
+function renderQ(){
+  const vq=visibleQs(),qi=Math.min(cQ,vq.length-1),q=vq[qi];
+  if(!q)return showResults();
+  const fl=document.getElementById('dflow');
+  let prog=vq.map((_,i)=>`<div class="qd ${i<qi?'done':i===qi?'cur':''}"></div>`).join('');
+  let opts=q.opts.map(o=>`<button class="ob" onclick="pick('${q.id}','${o.v}')">
+    <div class="ic">${o.i}</div><div><div class="lb">${typeof o.l==='function'?o.l():o.l}</div>${o.d?`<div class="ds">${typeof o.d==='function'?o.d():o.d}</div>`:''}</div>
+  </button>`).join('');
+  let back=qi>0?`<button class="ob-back" onclick="goBack()">${T('back')}</button>`:'';
+  const ql=typeof q.label==='function'?q.label():q.label;
+  const qt=typeof q.text==='function'?q.text():q.text;
+  const qh=q.help?(typeof q.help==='function'?q.help():q.help):null;
+  fl.innerHTML=`<div class="qc">${back}<div class="qp">${prog}</div>
+    <div class="ql">${ql}</div><div class="qt">${qt}</div>
+    ${qh?`<div class="qh">💡 ${qh}</div>`:''}
+    <div class="og">${opts}</div></div>`;
+}
+
+function pick(id,v){
+  A[id]=v;
+  const vq=visibleQs();
+  const ci=vq.findIndex(q=>q.id===id);
+  if(ci<vq.length-1){cQ=ci+1;renderQ();}
+  else showResults();
+}
+function goBack(){if(cQ>0){cQ--;renderQ();}}
+function resetDiag(){A={};cQ=0;renderQ();}
+
+// ============================================
+// KNOWLEDGE BASE: Titles, Docs, Steps
+// ============================================
+function getTitre(){
+  const m=A.motif,s=A.situation,ft=A.famille_type,tt=A.talent_type,wt=A.travail_type,nat=A.nationalite;
+  let t={};
+
+  if(nat==='algerie'){
+    t.name='Certificat de résidence algérien';
+    t.desc='Les ressortissants algériens relèvent de l\'accord franco-algérien du 27/12/1968 et non du CESEDA';
+    t.duree='1 an ou 10 ans selon la situation';
+    t.cout='225€ (75€ pour les étudiants)';
+    t.notes='Procédure spécifique : pas de carte pluriannuelle, passage direct possible à la carte de 10 ans dans certains cas.';
+    return t;
+  }
+
+  if(m==='travail'){
+    if(wt==='cdi'){t={name:'Carte de séjour temporaire "Salarié"',desc:'Pour les salariés en CDI avec autorisation de travail',duree:'1 an, renouvelable → puis pluriannuelle',cout:'225€ (taxe 200€ + timbre 25€)'};}
+    else if(wt==='cdd'){t={name:'Carte de séjour temporaire "Travailleur temporaire"',desc:'Pour les salariés en CDD',duree:'Durée du contrat (max 1 an)',cout:'225€'};}
+    else if(wt==='saisonnier'){t={name:'Carte pluriannuelle "Travailleur saisonnier"',desc:'Max 6 mois de travail/an, résidence habituelle hors France',duree:'3 ans',cout:'75€'};}
+    else if(wt==='metier_tension'){t={name:'Carte temporaire "Métier en tension"',desc:'Dispositif expérimental 2024 — 12 mois d\'activité dans un secteur en pénurie',duree:'1 an',cout:'225€',notes:'Nouveau dispositif : pas besoin de contrat préalable si vous justifiez de 12 mois d\'activité dans un métier en tension.'};}
+    else t={name:'Carte de séjour "Salarié"',desc:'Titre professionnel',duree:'1 an',cout:'225€'};
+  }
+  else if(m==='etudes'){
+    t={name:'Carte de séjour temporaire "Étudiant"',desc:'Pour les étudiants inscrits dans l\'enseignement supérieur',duree:'Durée du cycle d\'études (1 à 4 ans)',cout:'75€',notes:'Autorise le travail à temps partiel (964h/an max, soit 60% du temps légal). Pas de test de français requis à la demande.'};
+    if(A.etudes_type==='doctorat')t={name:'Carte pluriannuelle "Talent — Chercheur"',desc:'Pour les doctorants et post-doctorants avec convention d\'accueil',duree:'Jusqu\'à 4 ans',cout:'225€',notes:'Si vous avez une convention d\'accueil, le titre Talent-Chercheur est plus avantageux que la carte étudiant.'};
+  }
+  else if(m==='famille'){
+    if(ft==='conjoint_fr'){t={name:'Carte de séjour "Vie privée et familiale" — Conjoint de Français',desc:'Pour les époux/épouses de citoyen(ne) français(e)',duree:'1 an → puis pluriannuelle 2 ans → carte résident 10 ans possible après 3 ans de mariage',cout:'225€ (si entrée sans VLS: +200€ visa de régularisation)',notes:'Vie commune effective de 6 mois en France requise si marié en France sans VLS-TS. La transcription de l\'acte de mariage est obligatoire si mariage célébré à l\'étranger.'};}
+    else if(ft==='parent_enfant_fr'){t={name:'Carte "Vie privée et familiale" — Parent d\'enfant français',desc:'Pour les parents d\'un enfant de nationalité française résidant en France',duree:'1 an → pluriannuelle',cout:'225€',notes:'Vous devez prouver que vous contribuez effectivement à l\'entretien et l\'éducation de l\'enfant (art. 371-2 Code civil).'};}
+    else if(ft==='regroupement'){t={name:'Carte "Vie privée et familiale" — Regroupement familial',desc:'Pour rejoindre un membre de famille en séjour régulier depuis 18+ mois',duree:'1 an → pluriannuelle',cout:'225€',notes:'La demande est initiée par le regroupant (celui déjà en France), pas par vous directement.'};}
+    else if(ft==='pacs_concubin'){t={name:'Carte "Vie privée et familiale" — Liens personnels',desc:'Pour les partenaires pacsés ou concubins d\'un étranger en séjour régulier',duree:'1 an',cout:'225€',notes:'Plus difficile à obtenir qu\'un titre de conjoint. Preuves de vie commune très documentées nécessaires.'};}
+    else{t={name:'Carte "Vie privée et familiale" — Liens personnels & familiaux',desc:'Pour les personnes justifiant d\'attaches fortes en France',duree:'1 an',cout:'225€',notes:'Admission exceptionnelle : 10 ans de présence, insertion prouvée, ou motifs humanitaires.'};}
+  }
+  else if(m==='talent'){
+    if(tt==='salarie_qualifie'){t={name:'Carte pluriannuelle "Talent — Salarié qualifié"',desc:'Diplôme ≥ Master + rémunération ≥ 39 582€ brut/an (2025-2026)',duree:'Jusqu\'à 4 ans',cout:'225€',notes:'Inclut aussi la Carte Bleue Européenne (seuil à 59 373€/an). Pas de test de français requis à la demande. Famille accompagnante éligible à la carte Talent-Famille.'};}
+    else if(tt==='chercheur'){t={name:'Carte pluriannuelle "Talent — Chercheur"',desc:'Convention d\'accueil avec un organisme de recherche en France',duree:'Jusqu\'à 4 ans',cout:'225€'};}
+    else if(tt==='entrepreneur'){t={name:'Carte pluriannuelle "Talent — Porteur de projet"',desc:'Création d\'entreprise avec projet viable + investissement ≥ 30 000€',duree:'Jusqu\'à 4 ans',cout:'225€',notes:'Nécessite un avis favorable de la DREETS sur la viabilité économique du projet.'};}
+    else if(tt==='artiste'){t={name:'Carte pluriannuelle "Talent — Profession artistique et culturelle"',desc:'Activité artistique ou culturelle + revenus suffisants',duree:'Jusqu\'à 4 ans',cout:'225€'};}
+    else if(tt==='medical'){t={name:'Carte pluriannuelle "Talent — Profession médicale et de la pharmacie"',desc:'Nouvelle mention créée par la loi 2024 pour les médecins, pharmaciens, sages-femmes…',duree:'Jusqu\'à 4 ans',cout:'225€',notes:'Mention créée par l\'article 31 de la loi du 26 janvier 2024.'};}
+    else t={name:'Carte pluriannuelle "Talent"',desc:'Titre pour profils qualifiés',duree:'Jusqu\'à 4 ans',cout:'225€'};
+  }
+  else{t={name:'Titre de séjour selon votre situation',desc:'Visiteur, retraité, étranger malade, ou régularisation',duree:'Variable',cout:'Variable',notes:'Contactez votre préfecture ou un avocat spécialisé pour déterminer le titre adapté.'};}
+
+  // Pluriannuelle overlay
+  if(s==='pluriannuelle'&&m!=='talent'){
+    t.name='Carte de séjour pluriannuelle — '+t.name.split('"')[1];
+    t.duree='2 à 4 ans';
+    t.civique=true;
+  }
+
+  // Mai 2026 tarif change
+  t.cout_note='⚠️ À partir du 1er mai 2026, les tarifs changent : 150€ à la délivrance, jusqu\'à 350€ pour certains titres.';
+
+  return t;
+}
+
+function getDocs(){
+  const m=A.motif,ft=A.famille_type,tt=A.talent_type,wt=A.travail_type,s=A.situation,nat=A.nationalite;
+  let cats=[];
+
+  // Common docs
+  let common=[
+    {n:'Passeport en cours de validité',d:'Toutes les pages : état civil, dates de validité, cachets d\'entrée, visas',tip:'Ou attestation consulaire avec photo'},
+    {n:'Justificatif de domicile < 6 mois',d:'Facture EDF/gaz/internet, quittance de loyer, bail de location',tip:'Si hébergé : attestation + justificatif + copie pièce d\'identité de l\'hébergeant'},
+    {n:'3 photos d\'identité',d:'Format 35×45mm, norme ISO/IEC 19794-5:2005, fond clair',tip:'Ou e-photo numérique (code fourni par photographe agréé)'},
+    {n:'Timbre fiscal',d:'Montant selon titre (généralement 225€)',link:'https://timbres.impots.gouv.fr',tip:'Achetable en ligne ou en bureau de tabac'},
+    {n:'Contrat d\'engagement républicain signé',d:'Engagement à respecter les principes de la République',tip:'À signer en première demande ET en renouvellement'},
+    {n:'Extrait d\'acte de naissance',d:'Avec filiation — traduit en français si étranger',tip:'Traduction par traducteur assermenté uniquement'},
+  ];
+  if(s==='renouvellement'||s==='pluriannuelle'){
+    common.push({n:'Titre de séjour actuel (recto-verso)',d:'Original + copie du titre en cours de validité'});
+    common.push({n:'Attestation CIR de l\'OFII',d:'Contrat d\'intégration républicaine signé ou attestation de clôture',tip:'Sauf si dispensé'});
+  }
+  cats.push({title:'📋 Pièces communes à tout dossier',docs:common});
+
+  // Motif-specific
+  let spec=[];
+  if(m==='travail'){
+    spec=[
+      {n:'Autorisation de travail',d:'Délivrée par la DREETS (ex-DIRECCTE) à la demande de l\'employeur',tip:'Demande en ligne par l\'employeur sur la plateforme dédiée'},
+      {n:'Contrat de travail signé',d:'CDI ou CDD visé',tip:'Formulaire CERFA n°15186*03 pour la demande d\'autorisation'},
+    ];
+    if(s==='renouvellement'){
+      spec.push({n:'Déclaration sociale nominative (DSN)',d:'De l\'employeur vous concernant, ou attestation d\'activité',tip:'Attestation d\'activité professionnelle des 12 derniers mois téléchargeable sur mesdroitssociaux.gouv.fr'});
+      spec.push({n:'3 derniers bulletins de salaire',d:'Ou attestation de l\'employeur pour les CDI'});
+    }
+    if(wt==='metier_tension'){
+      spec.push({n:'Justificatifs de 12 mois d\'activité',d:'Dans un secteur/métier figurant sur la liste des métiers en tension'});
+      spec.push({n:'Formulaire de demande d\'admission exceptionnelle',d:'Admission exceptionnelle au séjour au titre des métiers en tension'});
+    }
+    if(wt==='saisonnier'){
+      spec.push({n:'Engagement de maintien de résidence hors France',d:'Attestation sur l\'honneur que votre résidence habituelle reste hors de France'});
+    }
+  }
+  else if(m==='etudes'){
+    spec=[
+      {n:'Certificat d\'inscription ou pré-inscription',d:'Dans un établissement d\'enseignement supérieur reconnu par l\'État'},
+      {n:'Justificatif de ressources suffisantes',d:'Minimum ~615€/mois : bourses, caution parentale, compte bancaire',tip:'Attestation de virement irrévocable ou attestation de bourse'},
+      {n:'Attestation Campus France',d:'Si procédure « Études en France »',tip:'Pas obligatoire pour tous les pays'},
+    ];
+    if(s==='renouvellement'){
+      spec.push({n:'Relevés de notes de l\'année écoulée',d:'Prouvant l\'assiduité et la progression académique'});
+      spec.push({n:'Justificatif d\'inscription pour l\'année suivante',d:'Ou attestation de réinscription'});
+    }
+  }
+  else if(m==='famille'){
+    if(ft==='conjoint_fr'){
+      spec=[
+        {n:'Copie intégrale de l\'acte de mariage',d:'Ou transcription si mariage célébré à l\'étranger',tip:'La transcription est obligatoire — sans elle, pas de titre'},
+        {n:'Justificatif de nationalité française du conjoint',d:'CNI ou passeport en cours de validité, ou certificat de nationalité < 6 mois'},
+        {n:'Déclaration sur l\'honneur conjointe de vie commune',d:'Signée par les deux époux'},
+        {n:'Preuves de communauté de vie (6 mois min)',d:'Bail aux deux noms, factures communes, RIB conjoint, attestation CAF…',tip:'1 justificatif par trimestre minimum'},
+        {n:'Déclaration de non-polygamie',d:'Si ressortissant d\'un pays autorisant la polygamie'},
+      ];
+    }
+    else if(ft==='parent_enfant_fr'){
+      spec=[
+        {n:'Acte de naissance de l\'enfant français',d:'Copie intégrale avec filiation'},
+        {n:'Justificatif de nationalité française de l\'enfant',d:'CNI, passeport ou certificat de nationalité'},
+        {n:'Preuves de contribution à l\'entretien et éducation',d:'Virements, attestation scolaire, preuves de résidence commune…',tip:'Article 371-2 du Code civil — tout moyen de preuve accepté'},
+      ];
+    }
+    else if(ft==='regroupement'){
+      spec=[
+        {n:'Titre de séjour du regroupant',d:'Copie du titre de celui/celle déjà en France'},
+        {n:'Attestation OFII de regroupement familial',d:'Accord préalable obtenu par le regroupant'},
+        {n:'Actes de mariage / naissance',d:'Traduits et légalisés'},
+        {n:'Justificatif de ressources du regroupant',d:'Revenus stables ≥ SMIC sur 12 mois'},
+        {n:'Justificatif de logement conforme',d:'Surface et salubrité conformes aux normes OFII'},
+      ];
+    }
+    else{
+      spec=[
+        {n:'Preuves d\'attaches en France',d:'Certificats de scolarité, attestations d\'employeurs, preuves de résidence...'},
+        {n:'Justificatifs de la durée de résidence',d:'Tout document d\'administration publique ou privée'},
+        {n:'Justificatifs d\'insertion sociale',d:'Associations, bénévolat, cercles amicaux…'},
+        {n:'Justificatif des conditions d\'existence',d:'Revenus, salaires, relevés bancaires'},
+      ];
+    }
+  }
+  else if(m==='talent'){
+    spec=[
+      {n:'Diplôme ≥ Master (ou 5 ans d\'exp. équivalente)',d:'Traduit si diplôme étranger',tip:'Pour la Carte Bleue : diplôme + salaire ≥ 59 373€/an'},
+    ];
+    if(tt==='salarie_qualifie'){
+      spec.push({n:'Contrat de travail avec rémunération ≥ 39 582€/an',d:'Ou ≥ 59 373€/an pour la Carte Bleue Européenne'});
+      spec.push({n:'Attestation employeur',d:'Modèle téléchargeable sur service-public.gouv.fr'});
+    }
+    if(tt==='chercheur'){
+      spec.push({n:'Convention d\'accueil',d:'Signée par l\'organisme de recherche agréé'});
+    }
+    if(tt==='entrepreneur'){
+      spec.push({n:'Business plan détaillé',d:'Projet viable, plan de financement, preuves de ressources'});
+      spec.push({n:'Justificatif d\'investissement ≥ 30 000€',d:'Relevés bancaires, attestation de fonds…'});
+      spec.push({n:'Avis de la DREETS / plateforme compétente',d:'Sur la viabilité économique de l\'activité'});
+    }
+    if(tt==='artiste'){
+      spec.push({n:'Contrats artistiques',d:'Contrats d\'engagement, convention de résidence…'});
+      spec.push({n:'Justificatifs de revenus de l\'activité',d:'Cachets, droits d\'auteur, facturation…'});
+    }
+    if(tt==='medical'){
+      spec.push({n:'Autorisation d\'exercice',d:'Délivrée par le ministre de la santé ou le CNG'});
+      spec.push({n:'Inscription à l\'Ordre concerné',d:'Moins de 3 mois'});
+    }
+    if(s==='premiere'){
+      spec.push({n:'Extrait de casier judiciaire',d:'Du pays d\'origine ou équivalent — uniquement pour la 1ère demande Talent'});
+    }
+  }
+  if(spec.length)cats.push({title:'📂 Pièces spécifiques — '+{travail:'Travail',etudes:'Études',famille:'Famille',talent:'Talent',autre:'Autre'}[m],docs:spec});
+
+  // Civique & langue (2026)
+  if(s==='pluriannuelle'||(s==='renouvellement'&&A.situation==='pluriannuelle')){
+    cats.push({title:'🏛️ Nouvelles obligations 2026 — Intégration',docs:[
+      {n:'Attestation de réussite à l\'examen civique',d:'QCM 40 questions — obligatoire AVANT le dépôt',tip:'Formation civique de 24h (4 jours) préalable à l\'examen',link:'https://www.immigration.interieur.gouv.fr'},
+      {n:'Certification de niveau de français (TCF IRN)',d:'Niveau A2 minimum pour la pluriannuelle',tip:'Ou diplôme français équivalent = dispense'},
+      {n:'Attestation de suivi de la formation civique OFII',d:'24h de formation sur les valeurs de la République'},
+    ]});
+  }
+
+  // Algerian specific
+  if(nat==='algerie'){
+    cats.push({title:'🇩🇿 Spécificités — Accord franco-algérien',docs:[
+      {n:'Les VLS-TS ne s\'appliquent pas aux Algériens',d:'Pas de visa long séjour valant titre de séjour — procédure classique avec demande en préfecture'},
+      {n:'Pas de carte pluriannuelle',d:'Le certificat de résidence passe directement de 1 an à 10 ans dans certains cas (ex: conjoint de Français après 1 an)'},
+    ]});
+  }
+
+  return cats;
+}
+
+function getTimeline(){
+  const m=A.motif,s=A.situation,pref=A.prefecture,nat=A.nationalite;
+  const dm={paris:'4-8 mois',grande:'3-6 mois',moyenne:'2-4 mois',petit:'1-3 mois'};
+  const d=dm[pref]||'2-4 mois';
+  let items=[];
+
+  if(s==='premiere'){
+    items.push({i:'✈️',s:'a',t:'Demande de visa long séjour',
+      d:'Depuis votre pays de résidence, via France-Visas. Rendez-vous consulaire nécessaire.',
+      tags:[{t:'2-8 semaines',c:'dur'},{t:'99€ visa',c:'cost'},{t:'france-visas.gouv.fr',c:'tip'}]});
+    items.push({i:'📱',s:'p',t:'Validation du VLS-TS en ligne',
+      d:'Dans les 3 mois suivant l\'arrivée. Sur la plateforme ANEF. Paiement de la taxe OFII (200€).',
+      tags:[{t:'3 mois max',c:'dur'},{t:'200€ taxe OFII',c:'cost'}]});
+    if(nat==='algerie'){
+      items[items.length-1]={i:'📱',s:'p',t:'Demande de certificat de résidence en préfecture',
+        d:'Les Algériens n\'ont pas de VLS-TS. Demande directe en préfecture avec le visa.',
+        tags:[{t:'Procédure spécifique',c:'alert'}]};
+    }
+    items.push({i:'🤝',s:'p',t:'Signature du CIR + Formation OFII',
+      d:'Contrat d\'intégration républicaine : entretien personnalisé + positionnement linguistique + orientation vers les formations.',
+      tags:[{t:'~1 mois après arrivée',c:'dur'},{t:'Gratuit',c:'tip'}]});
+  }
+
+  if(s==='renouvellement'){
+    items.push({i:'⏰',s:'w',t:'⚠️ Anticiper le renouvellement',
+      d:'Déposez entre 4 mois et 2 mois AVANT l\'expiration. Hors délai = +180€ de pénalité.',
+      tags:[{t:'Impératif',c:'alert'},{t:'+180€ si hors délai',c:'cost'}]});
+  }
+
+  if(s==='changement'){
+    items.push({i:'🔀',s:'a',t:'Vérifier l\'éligibilité au changement de statut',
+      d:'Tous les changements ne sont pas possibles. Vérifiez sur service-public.gouv.fr ou avec votre préfecture.',
+      tags:[{t:'Consultation préalable',c:'tip'}]});
+  }
+
+  if(s==='pluriannuelle'){
+    items.push({i:'🏛️',s:'w',t:'⚠️ Formation civique obligatoire (24h)',
+      d:'4 jours de formation dispensée par l\'OFII. AVANT l\'examen civique. Obligatoire depuis janvier 2026.',
+      tags:[{t:'4 jours',c:'dur'},{t:'Nouveau 2026',c:'new'},{t:'Obligatoire',c:'alert'}]});
+    items.push({i:'📝',s:'w',t:'⚠️ Examen civique (QCM)',
+      d:'40 questions (28 connaissances + 12 mises en situation), 45 min. AVANT le dépôt de la demande.',
+      tags:[{t:'45 min',c:'dur'},{t:'Nouveau 2026',c:'new'}]});
+    items.push({i:'🗣️',s:'p',t:'Certification de français (TCF IRN)',
+      d:'Niveau A2 min. pour pluriannuelle. À passer en avance. Dispensé si diplôme français.',
+      tags:[{t:'~80-120€',c:'cost'},{t:'Anticiper !',c:'tip'}]});
+  }
+
+  items.push({i:'📁',s:'p',t:'Constitution du dossier complet',
+    d:'Rassemblez TOUTES les pièces. Un dossier incomplet = refus ou délai supplémentaire. Voir onglet Documents.',
+    tags:[{t:'1-3 semaines',c:'dur'},{t:'Tout photocopier + originaux',c:'tip'}]});
+
+  items.push({i:'🌐',s:'p',t:'Traduction et légalisation',
+    d:'Tous les actes d\'état civil étrangers doivent être traduits par un traducteur assermenté. Certains pays nécessitent une apostille.',
+    tags:[{t:'20-60€ / document',c:'cost'},{t:'Traducteur assermenté uniquement',c:'alert'}]});
+
+  items.push({i:'💻',s:'p',t:'Dépôt en ligne sur ANEF',
+    d:'Administration Numérique des Étrangers en France. Attestation dématérialisée immédiate.',
+    tags:[{t:'anef.immigration.interieur.gouv.fr',c:'tip'}]});
+
+  items.push({i:'⏳',s:'p',t:'Instruction du dossier par la préfecture',
+    d:`Délai estimé dans votre zone : ${d}. Un récépissé est délivré = droits maintenus pendant l'attente.`,
+    tags:[{t:d,c:'dur'},{t:'Récépissé = droit de rester',c:'tip'}]});
+
+  if(m==='travail'){
+    items.push({i:'🏥',s:'p',t:'Visite médicale OFII',
+      d:'Convocation par l\'OFII. Examen médical obligatoire pour les primo-arrivants.',
+      tags:[{t:'Gratuit',c:'tip'}]});
+  }
+
+  items.push({i:'🏢',s:'p',t:'Convocation en préfecture',
+    d:'Prise d\'empreintes biométriques + remise du titre. Apportez le justificatif de timbre fiscal.',
+    tags:[{t:'225€ (cas général)',c:'cost'}]});
+
+  items.push({i:'🎉',s:'d',t:'Réception du titre de séjour !',
+    d:'Vérifiez toutes les informations (nom, dates, mention). En cas d\'erreur, signalez immédiatement.',
+    tags:[{t:'Pensez au renouvellement !',c:'tip'}]});
+
+  return items;
+}
+
+// ============================================
+// RESULTS RENDER
+// ============================================
+function showResults(){
+  const t=getTitre(),steps=getTimeline();
+  const fl=document.getElementById('dflow');
+
+  let stepsH=steps.slice(0,6).map((s,i)=>`<li class="si"><div class="sn">${i+1}</div>
+    <div class="sc"><h4>${s.t}</h4><p>${s.d}</p></div></li>`).join('');
+
+  fl.innerHTML=`<div class="rc"><div class="rh"><h2>✅ Votre parcours personnalisé</h2>
+    <p>Basé sur vos ${Object.keys(A).length} réponses.</p></div>
+    <div class="rb">
+      <div class="rt"><div><div class="bg">TITRE RECOMMANDÉ</div>
+        <div class="tn" style="margin-top:8px">${t.name}</div>
+        <div class="td">${t.desc}</div>
+        <div class="td" style="margin-top:5px">📅 ${t.duree} — 💰 ${t.cout}</div>
+        ${t.civique?'<div class="td" style="color:var(--warn);margin-top:4px">⚠️ Examen civique + niveau A2 obligatoires (2026)</div>':''}
+        ${t.notes?`<div class="td" style="margin-top:4px">💡 ${t.notes}</div>`:''}
+      </div></div>
+
+      ${t.cout_note?`<div class="ctx"><div class="ctx-t">💰 Changement de tarifs 2026</div><p>${t.cout_note}</p></div>`:''}
+
+      <h3 style="font-family:var(--fd);font-size:1rem;margin:16px 0 12px">Premières étapes</h3>
+      <ul class="sl">${stepsH}</ul>
+      ${steps.length>6?`<p style="font-size:.82rem;color:var(--t2);margin-top:8px">+ ${steps.length-6} étapes supplémentaires → voir l'onglet Suivi</p>`:''}
+
+      <div class="br">
+        <button class="bp" onclick="genDocs();goNav('docs')">📁 Ma checklist complète</button>
+        <button class="bs" onclick="genTL();goNav('suivi')">📅 Timeline détaillée</button>
+      </div>
+      <button class="rl" onclick="resetDiag()">↻ Recommencer le diagnostic</button>
+    </div></div>
+    <div class="ib"><div class="ii">⚠️</div><div><p><strong style="color:var(--warn)">Avertissement</strong><br>
+    Outil informatif, ne remplace pas un conseil juridique. Les pièces et délais varient selon les préfectures. Sources : <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/N110" target="_blank">service-public.gouv.fr</a>, <a href="https://www.immigration.interieur.gouv.fr" target="_blank">immigration.interieur.gouv.fr</a></p></div></div>`;
+}
+
+function goNav(id){
+  const btns=document.querySelectorAll('.nav-b');
+  const map={diag:0,docs:1,suivi:2,faq:3,liens:4};
+  btns[map[id]].click();
+}
+
+// ============================================
+// CHECKLIST RENDER
+// ============================================
+function genDocs(){
+  const cats=getDocs();
+  renderCL(cats);
+}
+function renderCL(cats){
+  const c=document.getElementById('docs-c');
+  let all=[];cats.forEach(cat=>cat.docs.forEach(d=>all.push(d)));
+  const total=all.length,checked=all.filter((_,i)=>ckd['d'+i]).length;
+
+  let motifL={'travail':'💼 Travail','etudes':'🎓 Études','famille':'👨‍👩‍👧 Famille','talent':'⭐ Talent','autre':'📋 Autre'}[A.motif]||'';
+  let sitL={'premiere':'🆕 1ère demande','renouvellement':'🔄 Renouvellement','changement':'🔀 Changement','pluriannuelle':'📅 Pluriannuelle'}[A.situation]||'';
+
+  let idx=0;
+  let catsH=cats.map(cat=>{
+    let docsH=cat.docs.map(d=>{
+      const ci=idx,isCk=ckd['d'+ci];idx++;
+      return `<div class="di ${isCk?'cr':''}" onclick="tgl(${ci})">
+        <div class="dk ${isCk?'ck':''}"></div>
+        <div><div class="dn">${d.n}</div><div class="dd">${d.d}</div>
+        ${d.tip?`<div class="dd" style="color:var(--info)">💡 ${d.tip}</div>`:''}
+        ${d.link?`<div class="dl"><a href="${d.link}" target="_blank" style="color:inherit;text-decoration:none">🔗 Lien officiel</a></div>`:''}</div></div>`;
+    }).join('');
+    return `<div class="dc"><div class="dct">${cat.title}</div>${docsH}</div>`;
+  }).join('');
+
+  c.innerHTML=`<div class="cp"><span style="font-size:.82rem;color:var(--t2)">Profil :</span>
+    <span class="ct">${motifL}</span><span class="ct">${sitL}</span>
+    ${A.nationalite==='algerie'?'<span class="ct">🇩🇿 Algérie</span>':''}
+    ${A.famille_type?`<span class="ct">${{'conjoint_fr':'Conjoint FR','parent_enfant_fr':'Parent enfant FR','regroupement':'Regroupement','pacs_concubin':'PACS/Concubin','liens_perso':'Liens perso'}[A.famille_type]||''}</span>`:''}
+    </div>
+    <div class="pb"><div class="ps"><span class="c">${checked} / ${total} documents</span><span class="p">${total?Math.round(checked/total*100):0}%</span></div>
+    <div class="pt"><div class="pf" style="width:${total?(checked/total*100):0}%"></div></div></div>
+    ${catsH}
+    <div class="ib"><div class="ii">💡</div><div><p>Consultez toujours <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/N110" target="_blank">service-public.gouv.fr</a> ou le site de votre préfecture pour la liste définitive.</p></div></div>`;
+  window._cats=cats;
+}
+function tgl(i){ckd['d'+i]=!ckd['d'+i];localStorage.setItem('pf2_ck',JSON.stringify(ckd));if(window._cats)renderCL(window._cats);}
+
+// ============================================
+// TIMELINE RENDER
+// ============================================
+function genTL(){
+  const items=getTimeline();
+  const c=document.getElementById('suivi-c');
+  let h=items.map(it=>`<div class="ti"><div class="tic ${it.s}">${it.i}</div>
+    <div class="tco"><h4>${it.t}</h4><p>${it.d}</p>
+    <div class="tm">${it.tags.map(t=>`<span class="tt ${t.c}">${t.t}</span>`).join('')}</div></div></div>`).join('');
+  c.innerHTML=`<div>${h}</div>
+    <div class="ib"><div class="ii">📌</div><div><p>Délais estimés. Conservez toujours une copie de votre récépissé. En cas de dépassement du délai légal de 4 mois sans réponse, c'est un refus implicite — vous pouvez faire un recours.</p></div></div>`;
+}
+
+// ============================================
+// FAQ
+// ============================================
+const faqs=[
+  {q:'Qu\'est-ce que l\'ANEF ?',a:'L\'Administration Numérique des Étrangers en France est la plateforme en ligne où se font la majorité des demandes de titre de séjour depuis 2023. Accessible sur <a href="https://administration-etrangers-en-france.interieur.gouv.fr" target="_blank">administration-etrangers-en-france.interieur.gouv.fr</a>.'},
+  {q:'Qu\'est-ce que l\'examen civique obligatoire depuis 2026 ?',a:'Depuis le 1er janvier 2026, un QCM de 40 questions (28 connaissances générales + 12 mises en situation) doit être réussi AVANT de demander une carte pluriannuelle, une carte de résident, ou la naturalisation. La formation civique de 24h (4 jours) dispensée par l\'OFII est préalable à l\'examen. Les personnes de plus de 65 ans ou en situation de handicap peuvent être dispensées.'},
+  {q:'Quel niveau de français est requis ?',a:'Depuis 2026 : <strong>A2</strong> pour la carte pluriannuelle, <strong>B1</strong> pour la carte de résident 10 ans, <strong>B2</strong> pour la naturalisation. Un diplôme français (bac ou supérieur) dispense du test de langue. Le test recommandé est le TCF IRN (Intégration, Résidence et Nationalité).'},
+  {q:'Combien coûte un titre de séjour ?',a:'En général : 225€ (taxe 200€ + timbre 25€). Étudiants : 75€. Saisonniers : 75€. <strong>À partir du 1er mai 2026</strong>, les tarifs changent : 150€ à la délivrance pour certains titres, jusqu\'à 350€ pour d\'autres. Le visa long séjour coûte 99€ en plus.'},
+  {q:'Mon dossier est incomplet, que se passe-t-il ?',a:'La préfecture peut refuser de l\'enregistrer ou demander les pièces manquantes. Sur ANEF, vous pouvez recevoir une demande de compléments. Un dossier incomplet allonge considérablement les délais.'},
+  {q:'Qu\'est-ce qu\'un récépissé ?',a:'Document provisoire délivré lors du dépôt de votre demande. Il prouve que votre demande est en cours et maintient votre droit au séjour (et souvent au travail) pendant l\'instruction. Sur ANEF, c\'est une attestation dématérialisée.'},
+  {q:'Je suis algérien, quelles sont les différences ?',a:'Les ressortissants algériens relèvent de l\'accord franco-algérien de 1968, pas du CESEDA. Principales différences : pas de VLS-TS (procédure classique en préfecture), pas de carte pluriannuelle (passage direct de 1 an à 10 ans possible), certificat de résidence au lieu de carte de séjour.'},
+  {q:'Que faire si ma demande est refusée ?',a:'Un refus est notifié par courrier motivé, souvent accompagné d\'une OQTF. Vous pouvez faire : un recours gracieux (auprès du préfet), un recours hiérarchique (auprès du ministre), et/ou un recours contentieux devant le tribunal administratif (délai de 48h, 15j ou 30j selon le type d\'OQTF).'},
+  {q:'Puis-je travailler avec mon récépissé ?',a:'Ça dépend du type de récépissé. Un récépissé de renouvellement d\'une carte autorisant le travail vous autorise à continuer de travailler. Un récépissé de première demande peut ne pas autoriser le travail selon le titre demandé.'},
+  {q:'Quand déposer ma demande de renouvellement ?',a:'Entre <strong>4 mois et 2 mois</strong> avant l\'expiration de votre titre. Avant 4 mois = demande clôturée. Après l\'expiration = +180€ de droit de visa de régularisation.'},
+  {q:'Je suis conjoint(e) de Français, puis-je obtenir une carte de résident ?',a:'Oui, après 3 ans de mariage et de vie commune en France (2 ans pour les conjoints entrés par regroupement familial). Depuis 2026, il faut en plus justifier du niveau B1 de français et réussir l\'examen civique.'},
+  {q:'Qu\'est-ce que le Talent — Salarié qualifié ?',a:'Anciennement "Passeport Talent", cette carte pluriannuelle (jusqu\'à 4 ans) s\'adresse aux salariés avec un diplôme ≥ Master et un salaire ≥ 39 582€ brut/an (ou 59 373€/an pour la Carte Bleue Européenne). Pas de test de français requis à la demande. Famille éligible à la carte Talent-Famille.'},
+];
+
+function renderFaq(list){
+  document.getElementById('faq-c').innerHTML=list.map((f,i)=>`<div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">${f.q}<span class="faq-arrow">▼</span></div>
+    <div class="faq-a">${f.a}</div></div>`).join('');
+}
+function filterFaq(v){
+  const vl=v.toLowerCase();
+  renderFaq(vl?faqs.filter(f=>f.q.toLowerCase().includes(vl)||f.a.toLowerCase().includes(vl)):faqs);
+}
+
+// ============================================
+// LIENS UTILES
+// ============================================
+function renderLiens(){
+  const liens=[
+    {cat:'🏛️ Plateformes officielles',items:[
+      {n:'ANEF — Demande de titre de séjour en ligne',u:'https://administration-etrangers-en-france.interieur.gouv.fr',d:'Plateforme officielle pour déposer vos demandes'},
+      {n:'France-Visas — Demande de visa',u:'https://france-visas.gouv.fr',d:'Demande de visa long séjour depuis l\'étranger'},
+      {n:'Service-Public.fr — Étrangers en France',u:'https://www.service-public.gouv.fr/particuliers/vosdroits/N110',d:'Toutes les fiches pratiques officielles'},
+      {n:'Timbres fiscaux en ligne',u:'https://timbres.impots.gouv.fr',d:'Achat du timbre fiscal pour votre titre'},
+    ]},
+    {cat:'📚 Préparation & formation',items:[
+      {n:'Formation civique — Site officiel',u:'https://www.immigration.interieur.gouv.fr',d:'Préparation à l\'examen civique 2026'},
+      {n:'Campus France',u:'https://www.campusfrance.org',d:'Pour les étudiants — procédure "Études en France"'},
+      {n:'France Travail (ex Pôle Emploi)',u:'https://www.francetravail.fr',d:'Recherche d\'emploi et droits'},
+    ]},
+    {cat:'⚖️ Aide juridique & associations',items:[
+      {n:'La Cimade',u:'https://www.lacimade.org',d:'Accompagnement juridique gratuit pour les étrangers'},
+      {n:'GISTI — Groupe d\'information et de soutien',u:'https://www.gisti.org',d:'Guides pratiques et défense des droits'},
+      {n:'Info Droits Étrangers',u:'https://www.info-droits-etrangers.org',d:'Informations juridiques gratuites'},
+    ]},
+    {cat:'🔧 Outils pratiques',items:[
+      {n:'Trouver un traducteur assermenté',u:'https://www.service-public.gouv.fr/simulateur/calcul/TraducteurExpert',d:'Liste officielle par cour d\'appel'},
+      {n:'Mes droits sociaux',u:'https://www.mesdroitssociaux.gouv.fr',d:'Simulateur de droits (CAF, APL, santé…)'},
+      {n:'Welcome to France',u:'https://www.welcometofrance.com',d:'Guide officiel pour les talents internationaux'},
+    ]},
+  ];
+  document.getElementById('liens-c').innerHTML=liens.map(cat=>`<div style="margin-bottom:24px">
+    <div class="dct">${cat.cat}</div>
+    ${cat.items.map(l=>`<a href="${l.u}" target="_blank" style="text-decoration:none;display:block">
+      <div class="di" style="cursor:pointer"><div style="font-size:20px;margin-right:4px">🔗</div>
+        <div><div class="dn" style="color:var(--accent)">${l.n}</div><div class="dd">${l.d}</div>
+        <div class="dd" style="color:var(--t3);font-size:.72rem">${l.u}</div></div></div></a>`).join('')}
+  </div>`).join('');
+}
+
+// ============================================
+// SOS — SITUATIONS CRITIQUES
+// ============================================
+const sosCases=[
+  {emoji:'💼',title:'J\'ai perdu mon emploi — Titre "Salarié" (CDI)',severity:'warn',
+   situation:'Vous aviez un CDI, vous avez été licencié ou votre entreprise a fermé, et votre titre de séjour "Salarié" arrive à expiration.',
+   droits:[
+     'Si vous êtes indemnisé par France Travail (ARE) → votre titre "Salarié" peut être renouvelé pour 1 an, même sans emploi.',
+     'Au 2ème renouvellement sans emploi → titre renouvelé pour la durée restante de vos droits au chômage.',
+     'Le récépissé de renouvellement maintient vos droits (séjour + travail + allocations).'
+   ],
+   actions:[
+     '📌 Inscrivez-vous immédiatement à France Travail si ce n\'est pas fait.',
+     '📌 Demandez le renouvellement de votre titre AVANT l\'expiration (entre 4 et 2 mois avant).',
+     '📌 Pièces à fournir : attestation employeur de rupture + avis de situation France Travail.',
+     '📌 Si vous retrouvez un emploi : le nouvel employeur doit demander une nouvelle autorisation de travail.'
+   ],
+   danger:'⚠️ Si votre titre expire SANS que vous ayez fait la demande de renouvellement → France Travail suspend vos allocations. Cercle vicieux : sans titre = pas de chômage, sans chômage = pas de renouvellement.',
+   conseil:'Consultez La Cimade ou le GISTI pour un accompagnement juridique gratuit si votre situation se complique.'
+  },
+  {emoji:'📄',title:'Fin de CDD — Titre "Travailleur temporaire"',severity:'err',
+   situation:'Votre CDD est terminé et votre titre "Travailleur temporaire" arrive à expiration. Vous n\'avez pas encore de nouveau contrat.',
+   droits:[
+     'ATTENTION : contrairement au titre "Salarié", le titre "Travailleur temporaire" ne peut PAS être renouvelé sur la base du chômage.',
+     'Sans nouveau CDD (avec autorisation de travail), la préfecture peut refuser le renouvellement et émettre une OQTF.',
+     'Même si vous avez cotisé au chômage, France Travail ne peut pas vous inscrire sans titre valide.'
+   ],
+   actions:[
+     '🔴 PRIORITÉ : trouvez un nouveau contrat (CDD ou CDI) AVANT l\'expiration de votre titre.',
+     '📌 Si vous trouvez un CDI → demandez un changement de statut vers "Salarié" (plus protecteur).',
+     '📌 Intérim : les missions de moins de 3 mois ne nécessitent pas d\'autorisation de travail si votre titre est encore valide.',
+     '📌 Si vous êtes diplômé Bac+5 en France → vous pouvez demander un changement vers une carte "Recherche d\'emploi / Création d\'entreprise".',
+     '📌 Si vous avez des liens familiaux en France → explorez le changement de statut vers "Vie privée et familiale".'
+   ],
+   danger:'⚠️ Ne restez pas sans agir. Le récépissé délivré en attente de renouvellement peut porter la mention "n\'autorise pas à travailler" — ce qui bloque tout.',
+   conseil:'Contactez un avocat spécialisé ou une association (La Cimade, GISTI) dès que possible pour explorer vos options.'
+  },
+  {emoji:'⏰',title:'Mon titre de séjour a expiré',severity:'err',
+   situation:'Votre titre a expiré et vous n\'avez pas fait de demande de renouvellement à temps.',
+   droits:[
+     'Si votre titre a expiré depuis moins de 3 mois et que vous aviez déposé une demande avant expiration → dans certains départements, vous conservez vos droits.',
+     'Si vous n\'avez pas fait la demande → vous êtes en situation irrégulière. Vos droits sociaux et votre droit au travail sont suspendus.',
+     'Vous devrez payer un droit de visa de régularisation de 180€ en plus des frais normaux.'
+   ],
+   actions:[
+     '🔴 Déposez immédiatement une demande de renouvellement, même en retard.',
+     '📌 Rassemblez des justificatifs expliquant le retard (maladie, problème ANEF, etc.).',
+     '📌 Présentez-vous à France Travail avec le récépissé de dépôt dès que vous l\'obtenez.',
+     '📌 Contactez une association pour évaluer le risque d\'OQTF.'
+   ],
+   danger:'⚠️ Un titre expiré sans demande de renouvellement en cours = perte de l\'inscription France Travail + suspension des allocations chômage.',
+   conseil:'N\'attendez pas. Chaque jour compte. Prenez rendez-vous en préfecture ou déposez sur ANEF immédiatement.'
+  },
+  {emoji:'🚫',title:'Ma demande de titre a été refusée (+ OQTF)',severity:'err',
+   situation:'La préfecture a refusé votre titre de séjour et vous avez reçu une Obligation de Quitter le Territoire Français.',
+   droits:[
+     'Vous avez le droit de faire un recours. Les délais dépendent du type d\'OQTF : 48h, 15 jours ou 30 jours.',
+     'Un recours gracieux (auprès du préfet) et/ou hiérarchique (auprès du ministre) est possible en parallèle.',
+     'Un recours contentieux devant le tribunal administratif est possible.',
+     'Si la préfecture n\'a pas répondu au bout de 4 mois → c\'est un refus implicite, recours possible dans les 2 mois.'
+   ],
+   actions:[
+     '🔴 Ne paniquez pas. Notez la date de notification — les délais de recours sont très courts.',
+     '📌 Consultez IMMÉDIATEMENT un avocat ou une association spécialisée.',
+     '📌 Vous pouvez demander l\'aide juridictionnelle (AJ) pour un avocat gratuit.',
+     '📌 Le recours au tribunal suspend l\'exécution de l\'OQTF dans la plupart des cas.'
+   ],
+   danger:'⚠️ Les délais de recours sont très courts (parfois 48h). Ne tardez pas à agir.',
+   conseil:'La Cimade, le GISTI, et les avocats au barreau proposent des permanences gratuites d\'urgence.'
+  },
+  {emoji:'💰',title:'Plus de chômage, plus d\'emploi, titre bientôt expiré',severity:'err',
+   situation:'Vos droits ARE sont épuisés, vous n\'avez pas d\'emploi, et votre titre "Salarié" arrive à expiration.',
+   droits:[
+     'Sans indemnisation France Travail ni emploi, le renouvellement du titre "Salarié" est très compromis.',
+     'La préfecture peut considérer que vous ne remplissez plus les conditions.',
+   ],
+   actions:[
+     '📌 Option 1 : Trouvez un emploi, même court (intérim, CDD) pour recharger vos droits chômage (~2-3 mois de travail suffisent).',
+     '📌 Option 2 : Si vous êtes marié(e) à un résident régulier → changement de statut vers "Vie privée et familiale".',
+     '📌 Option 3 : Si vous êtes diplômé(e) Master en France → carte "Recherche d\'emploi / Création d\'entreprise" (non renouvelable, 1 an).',
+     '📌 Option 4 : Si vous travaillez dans un métier en tension → dispositif expérimental de régularisation.',
+     '📌 Présentez des économies / soutien familial comme justificatif de ressources (pas toujours suffisant mais aide).'
+   ],
+   danger:'⚠️ C\'est la situation la plus critique. Sans action rapide, vous risquez un refus + OQTF. Chaque semaine de travail (même intérim) améliore votre dossier.',
+   conseil:'Prenez rendez-vous avec une association juridique (La Cimade, GISTI) et votre CCAS/mairie pour un accompagnement social global.'
+  },
+  {emoji:'🔀',title:'Je veux changer d\'employeur',severity:'warn',
+   situation:'Vous avez un titre "Salarié" et vous souhaitez changer d\'entreprise.',
+   droits:[
+     'Chaque nouveau contrat nécessite une nouvelle autorisation de travail délivrée par la DREETS.',
+     'Vous ne pouvez PAS commencer le nouvel emploi avant d\'avoir reçu la nouvelle autorisation.',
+     'Travailler sans autorisation = emploi irrégulier, risque pour vous ET pour l\'employeur.'
+   ],
+   actions:[
+     '📌 Le nouvel employeur doit déposer la demande d\'autorisation de travail en ligne AVANT votre prise de poste.',
+     '📌 Informez votre préfecture du changement.',
+     '📌 Si le changement intervient pendant la 1ère année → procédure plus stricte, la préfecture réexamine tout le dossier.',
+     '📌 Si le nouvel emploi est dans le même secteur et zone géographique → plus de chances d\'acceptation.'
+   ],
+   danger:'⚠️ Commencer à travailler sans autorisation compromet votre prochain renouvellement.',
+   conseil:'Faites en sorte que le nouvel employeur lance la procédure le plus tôt possible — ça peut prendre plusieurs semaines.'
+  },
+];
+
+function renderSos(){
+  const c=document.getElementById('sos-c');
+  c.innerHTML=sosCases.map(s=>{
+    const sevCol={warn:'var(--warn)',err:'var(--err)'}[s.severity]||'var(--accent)';
+    const sevBg={warn:'var(--warn-s)',err:'var(--err-s)'}[s.severity]||'var(--accent-s)';
+    return `<div class="faq-item" onclick="this.classList.toggle('open')" style="border-left:3px solid ${sevCol}">
+      <div class="faq-q"><span>${s.emoji} ${s.title}</span><span class="faq-arrow">▼</span></div>
+      <div class="faq-a">
+        <div class="ctx" style="border-left-color:${sevCol};margin-bottom:12px">
+          <div class="ctx-t" style="color:${sevCol}">Votre situation</div>
+          <p>${s.situation}</p>
+        </div>
+        <div style="margin-bottom:12px"><strong style="font-size:.85rem">📋 Vos droits :</strong>
+          ${s.droits.map(d=>`<p style="margin:4px 0;padding-left:12px;border-left:2px solid var(--brd)">${d}</p>`).join('')}
+        </div>
+        <div style="margin-bottom:12px"><strong style="font-size:.85rem">✅ Actions à mener :</strong>
+          ${s.actions.map(a=>`<p style="margin:4px 0">${a}</p>`).join('')}
+        </div>
+        <div style="background:${sevBg};padding:12px;border-radius:8px;margin-bottom:10px;font-size:.85rem">
+          <strong style="color:${sevCol}">${s.danger}</strong>
+        </div>
+        <div style="background:var(--accent-s);padding:10px;border-radius:8px;font-size:.82rem;color:var(--accent)">
+          💡 ${s.conseil}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  c.innerHTML+=`<div class="ib" style="margin-top:20px"><div class="ii">⚠️</div><div>
+    <p><strong style="color:var(--warn)">Rappel important</strong><br>
+    Ces informations sont générales. Chaque situation est unique. En cas de doute, contactez une association spécialisée ou un avocat en droit des étrangers. L'aide juridictionnelle peut financer un avocat gratuitement.</p></div></div>`;
+}
+
+// ============================================
+// ASSOCIATIONS
+// ============================================
+const assosData=[
+  {cat:'⚖️ Aide juridique & droits des étrangers',items:[
+    {n:'La Cimade',d:'Accompagnement juridique, aide aux démarches, permanences dans toute la France. La référence.',u:'https://www.lacimade.org',tel:'',type:'Juridique, accompagnement, permanences'},
+    {n:'GISTI — Groupe d\'Information et de Soutien des Immigrés',d:'Information juridique, publications de référence, permanence téléphonique.',u:'https://www.gisti.org',tel:'01 43 14 60 66 (lun-ven 15h-18h)',type:'Juridique, information'},
+    {n:'Info Droits Étrangers',d:'Site de référence avec fiches pratiques détaillées sur tous les titres de séjour.',u:'https://www.info-droits-etrangers.org',tel:'',type:'Information juridique'},
+    {n:'Ligue des Droits de l\'Homme (LDH)',d:'Défense des droits, permanences juridiques dans de nombreuses villes.',u:'https://www.ldh-france.org',tel:'01 56 55 50 10 (lun-ven 10h-13h)',type:'Juridique, droits fondamentaux'},
+    {n:'MRAP — Mouvement contre le Racisme',d:'Lutte contre les discriminations, accompagnement juridique, habilitée en zone d\'attente.',u:'https://www.mrap.fr',tel:'',type:'Anti-discrimination, juridique'},
+  ]},
+  {cat:'🏠 Accueil, hébergement & insertion',items:[
+    {n:'France Terre d\'Asile',d:'Hébergement, accompagnement social et juridique, insertion professionnelle. Établissements dans toute la France.',u:'https://www.france-terre-asile.org',tel:'',type:'Hébergement, insertion, asile'},
+    {n:'Secours Catholique — Caritas France',d:'Accueil, repas, aide aux démarches, cours de français. Présent partout.',u:'https://www.secours-catholique.org',tel:'',type:'Accueil, aide alimentaire, démarches'},
+    {n:'Emmaüs',d:'Hébergement d\'urgence, insertion par l\'activité économique, aide matérielle.',u:'https://www.emmaus-france.org',tel:'',type:'Hébergement, insertion, aide matérielle'},
+    {n:'Croix-Rouge française',d:'Aide d\'urgence, cours de français, accompagnement social, hébergement.',u:'https://www.croix-rouge.fr',tel:'',type:'Urgence, cours de français, social'},
+    {n:'Samu Social — 115',d:'Hébergement d\'urgence. Numéro d\'appel gratuit, 24h/24.',u:'',tel:'115 (appel gratuit)',type:'Hébergement d\'urgence'},
+  ]},
+  {cat:'📚 Cours de français & formation',items:[
+    {n:'Réseau des AEFTI',d:'Ateliers socio-linguistiques, apprentissage du français, préparation à l\'examen civique.',u:'https://www.aefti.eu',tel:'',type:'Français, alphabétisation'},
+    {n:'Bibliothèques municipales',d:'Beaucoup proposent des ateliers de conversation et d\'apprentissage du français gratuits.',u:'',tel:'Renseignez-vous auprès de votre mairie',type:'Français, conversation'},
+    {n:'Emmaüs Connect',d:'Aide au numérique pour les démarches en ligne (ANEF, France Travail…). Crucial.',u:'https://emmaus-connect.org',tel:'',type:'Numérique, démarches en ligne'},
+    {n:'ASL — Ateliers Socio-Linguistiques',d:'Cours de français orientés vie quotidienne et démarches. Portés par des associations locales.',u:'',tel:'Demandez à votre CCAS ou mairie',type:'Français, vie quotidienne'},
+  ]},
+  {cat:'👨‍👩‍👧 Familles & couples binationaux',items:[
+    {n:'Les Amoureux au Ban Public',d:'Accompagnement des couples binationaux (mixtes). Aide sur les visas, titres de séjour, regroupement familial.',u:'https://www.amoureuxauban.net',tel:'',type:'Couples mixtes, visa conjoint'},
+    {n:'RESF — Réseau Éducation Sans Frontières',d:'Protection des jeunes et familles scolarisées menacées d\'expulsion.',u:'https://www.educationsansfrontieres.org',tel:'',type:'Familles, jeunes, scolarité'},
+    {n:'Femmes de la Terre',d:'Accompagnement juridique et social des femmes étrangères, y compris victimes de violences.',u:'https://femmesdelaterre.org',tel:'',type:'Femmes, violences, juridique'},
+  ]},
+  {cat:'🏳️‍🌈 Personnes LGBTQI+',items:[
+    {n:'ARDHIS',d:'Aide aux personnes LGBTQI+ étrangères : droit d\'asile, titre de séjour, accompagnement social, cours de français.',u:'https://ardhis.org',tel:'',type:'LGBTQI+, asile, séjour'},
+  ]},
+  {cat:'🏥 Santé',items:[
+    {n:'COMEDE — Comité Médical pour les Exilés',d:'Soins médicaux, soutien psychologique, aide aux démarches santé pour les exilés.',u:'https://www.comede.org',tel:'01 45 21 38 40',type:'Santé, soins, psychologique'},
+    {n:'Médecins du Monde',d:'Accès aux soins pour les personnes exclues du système de santé.',u:'https://www.medecinsdumonde.org',tel:'',type:'Soins, accès santé'},
+    {n:'Aide Médicale de l\'État (AME)',d:'Couverture santé gratuite pour les personnes en situation irrégulière résidant en France depuis +3 mois. Demande à la CPAM.',u:'https://www.ameli.fr',tel:'3646',type:'Couverture santé, irréguliers'},
+  ]},
+  {cat:'💼 Emploi & insertion professionnelle',items:[
+    {n:'France Travail (ex Pôle Emploi)',d:'Inscription, recherche d\'emploi, allocations chômage. Titre de séjour valide obligatoire.',u:'https://www.francetravail.fr',tel:'3949',type:'Emploi, chômage, formation'},
+    {n:'Missions locales',d:'Pour les 16-25 ans : accompagnement emploi, formation, logement.',u:'https://www.unml.info',tel:'',type:'Jeunes, emploi, formation'},
+    {n:'ASTI — Associations de Solidarité avec les Travailleurs Immigrés',d:'Aide à l\'emploi, formations, cours de français, accompagnement administratif. Réseau local.',u:'',tel:'Cherchez "ASTI + votre ville"',type:'Emploi, français, démarches'},
+  ]},
+  {cat:'📞 Numéros utiles',items:[
+    {n:'Allô Service Public',d:'Questions sur vos droits et démarches administratives. Agents du ministère de l\'intérieur.',u:'https://www.service-public.gouv.fr',tel:'3939 (0,15€/min)',type:'Information générale'},
+    {n:'Défenseur des droits',d:'En cas de discrimination ou de problème avec l\'administration (préfecture qui ne répond pas, etc.)',u:'https://www.defenseurdesdroits.fr',tel:'09 69 39 00 00 (gratuit)',type:'Discrimination, médiation'},
+    {n:'OFII — Office Français de l\'Immigration et de l\'Intégration',d:'Contrat d\'intégration républicaine, formation civique, visite médicale.',u:'https://www.ofii.fr',tel:'',type:'Intégration, CIR, formation'},
+  ]},
+];
+
+let _assosAll=assosData;
+function renderAssos(data){
+  const c=document.getElementById('assos-c');
+  c.innerHTML=data.map(cat=>`<div style="margin-bottom:24px">
+    <div class="dct">${cat.cat}</div>
+    ${cat.items.map(a=>`<div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q"><span>${a.n}</span><span class="faq-arrow">▼</span></div>
+      <div class="faq-a">
+        <p style="margin-bottom:8px">${a.d}</p>
+        ${a.u?`<p style="margin-bottom:4px">🔗 <a href="${a.u}" target="_blank" style="color:var(--accent)">${a.u}</a></p>`:''}
+        ${a.tel?`<p style="margin-bottom:4px">📞 <strong>${a.tel}</strong></p>`:''}
+        <p><span class="ct" style="font-size:.7rem">${a.type}</span></p>
+      </div>
+    </div>`).join('')}
+  </div>`).join('');
+}
+function filterAssos(v){
+  const vl=v.toLowerCase();
+  if(!vl){renderAssos(assosData);return;}
+  const filtered=assosData.map(cat=>({...cat,items:cat.items.filter(a=>
+    a.n.toLowerCase().includes(vl)||a.d.toLowerCase().includes(vl)||a.type.toLowerCase().includes(vl)
+  )})).filter(cat=>cat.items.length>0);
+  renderAssos(filtered);
+}
+
+// ============================================
+// INIT
+// ============================================
+// Apply saved language
+if(LANG!=='fr'){
+  document.querySelectorAll('.lang-b').forEach(b=>b.classList.remove('on'));
+  const lb=document.querySelector(`.lang-b[onclick="setLang('${LANG}')"]`);
+  if(lb)lb.classList.add('on');
+}
+updateStaticUI();
+renderQ();
+renderFaq(faqs);
+renderLiens();
+renderSos();
+renderAssos(assosData);
+</script>
+</body>
+</html>
